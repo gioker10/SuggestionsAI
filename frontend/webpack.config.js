@@ -5,9 +5,13 @@ module.exports = {
   entry: path.join(__dirname, "src", "index.js"),
   output: {
     path: path.resolve(__dirname, "dist"),
+    publicPath: "auto",
   },
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   module: {
     rules: [

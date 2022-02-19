@@ -1,40 +1,38 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import styled from "styled-components";
+import { NavBar } from "./common/components/NavBar";
+import { GamesPage } from "./Games/containers/GamesPage";
+import { MoviesPage } from "./Movies/containers/MoviesPage";
+import { MusicPage } from "./Music/containers/MusicPage";
+
+const StyledApp = styled.div`
+  width: 100%;
+  height: 100%;
+`;
 
 export const App = () => {
   return (
-    <div className="App">
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="dashboard">Dashboard</Link>
-          </li>
-          <li>
-            <Link to="about">About</Link>
-          </li>
-        </ul>
-      </nav>
+    <StyledApp className="App">
+      <NavBar />
       <div className="main">
-        {/* Define all the routes */}
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="about" element={<About />}></Route>
-          <Route path="*" element={<NotFound />}></Route>
+          <Route path="games" element={<Games />}></Route>
+          <Route path="movies" element={<Movies />}></Route>
+          <Route path="music" element={<Music />}></Route>
+          <Route path="*" element={<Navigate to="games" replace />} />
         </Routes>
       </div>
-    </div>
+    </StyledApp>
   );
 };
 
-export const Home = () => {
-  return <div>You are in Home page</div>;
+export const Games = () => {
+  return <GamesPage />;
 };
-export const About = () => {
-  return <div>This is the page where you put details about yourself</div>;
+export const Movies = () => {
+  return <MoviesPage />;
 };
-export const NotFound = () => {
-  return <div>This is a 404 page</div>;
+export const Music = () => {
+  return <MusicPage />;
 };
