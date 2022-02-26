@@ -16,6 +16,8 @@ const Area = styled.div`
   flex-direction: column;
   flex: 1;
   margin-bottom: 200px;
+  width: 100%;
+  align-items: center;
 `;
 
 const TitleArea = styled(Area)`
@@ -39,7 +41,7 @@ export const PageMain = ({ title }): Props => {
         <StyledTitle>{title}</StyledTitle>
       </TitleArea>
       <Area>
-        <SearchBar />
+        <SearchBar searchType={title} />
       </Area>
     </PageContainer>
   );

@@ -3,3 +3,9 @@ export const red = {
   normal: "#f44336",
   light: "#f6685e",
 };
+
+export const gray = {
+  dark: "#757575",
+  normal: "#bdbdbd",
+  light: "#e0e0e0",
+};

@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { routerLinks, RouterLink } from "../../routerUtils/RouterConstants";
-import { red } from "../../theme/ColorConstants";
+import { red, gray } from "../../theme/ColorConstants";
 import { Logo } from "../../theme/Logo";
 
 const StyledNavBar = styled.nav`
   display: flex;
   width: 100%;
   height: 60px;
-  border-bottom: 1px solid #d3d3d3;
+  border-bottom: 1px solid ${gray.normal};
 `;
 
 const StyledLink = styled(Link)`
@@ -29,20 +29,21 @@ const StyledLink = styled(Link)`
     ${({ activetabindex, tabIndex }) =>
       activetabindex !== tabIndex && `border-bottom: 5px solid ${red.light}`};
     transition: border-bottom 200ms linear;
+    transition: padding-top 0ms linear;
     padding-top: 5px;
   }
 `;
 
 export const NavBar = () => {
-  const [activeTabIndex, setActiveTabIndex]: [number, (number) => number] =
-    useState(routerLinks[0].tabIndex);
+  const [activeTabIndex, setActiveTabIndex] = useState(routerLinks[0].tabIndex);
+  const location = useLocation();
 
   useEffect(() => {
     const currentPathIndex = routerLinks.find(
-      (item) => item.link === window.location.pathname
+      (item) => item.link === location.pathname
     )?.tabIndex;
     setActiveTabIndex(currentPathIndex || routerLinks[0].tabIndex);
-  }, []);
+  }, [location]);
 
   return (
     <StyledNavBar>
