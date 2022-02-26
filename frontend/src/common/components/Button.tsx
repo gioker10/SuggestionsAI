@@ -7,6 +7,7 @@ const StyledRoundButton = styled.input`
   border: none;
   border-radius: 24px;
   width: 42px;
+  height 42px;
   transition: background-color 200ms linear;
 
   &:hover {

@@ -10,6 +10,7 @@ import {MusicPage} from './Music/containers/MusicPage';
 const StyledApp = styled.div`
   width: 100%;
   height: 100%;
+  overflow: hidden;
   font-family: Charlie Text, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans,
     Ubuntu, Droid Sans, Helvetica Neue, sans-serif;
 `;
