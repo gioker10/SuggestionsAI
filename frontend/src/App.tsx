@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import styled from "styled-components";
 import { NavBar } from "./common/components/NavBar";
+import { Pages } from "./common/constants/Constants";
 import { GamesPage } from "./Games/containers/GamesPage";
 import { MoviesPage } from "./Movies/containers/MoviesPage";
 import { MusicPage } from "./Music/containers/MusicPage";
@@ -19,10 +20,10 @@ export const App = () => {
       <NavBar />
       <Fragment>
         <Routes>
-          <Route path="games" element={<Games />}></Route>
-          <Route path="movies" element={<Movies />}></Route>
-          <Route path="music" element={<Music />}></Route>
-          <Route path="*" element={<Navigate to="games" replace />} />
+          <Route path={Pages.games} element={<Games />}></Route>
+          <Route path={Pages.movies} element={<Movies />}></Route>
+          <Route path={Pages.music} element={<Music />}></Route>
+          <Route path="*" element={<Navigate to={Pages.games} replace />} />
         </Routes>
       </Fragment>
     </StyledApp>
@@ -30,11 +31,11 @@ export const App = () => {
 };
 
 export const Games = () => {
-  return <GamesPage />;
+  return <GamesPage title={Pages.games} />;
 };
 export const Movies = () => {
-  return <MoviesPage />;
+  return <MoviesPage title={Pages.movies} />;
 };
 export const Music = () => {
-  return <MusicPage />;
+  return <MusicPage title={Pages.music} />;
 };

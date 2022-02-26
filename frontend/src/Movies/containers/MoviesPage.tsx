@@ -1,5 +1,10 @@
 import React from "react";
+import { PageMain } from "../../common/components/PageMain";
 
-export const MoviesPage = () => {
-  return <div>You are in Movies page</div>;
+interface Props {
+  title: string;
+}
+
+export const MoviesPage = ({ title }): Props => {
+  return <PageMain title={title} />;
 };

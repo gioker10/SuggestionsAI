@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { routerLinks, RouterLink } from "../../routerUtils/RouterConstants";
@@ -20,30 +20,39 @@ const StyledLink = styled(Link)`
   transition: border-bottom 200ms linear;
   text-decoration: none;
   color: black;
-  ${({ activeTabIndex, tabIndex }) =>
-    activeTabIndex === tabIndex &&
+  ${({ activetabindex, tabIndex }) =>
+    activetabindex === tabIndex &&
     `padding-top: 5px;border-bottom: 5px solid ${red.dark}`};
 
   &:hover {
     cursor: pointer;
-    ${({ activeTabIndex, tabIndex }) =>
-      activeTabIndex !== tabIndex && `border-bottom: 5px solid ${red.light}`};
+    ${({ activetabindex, tabIndex }) =>
+      activetabindex !== tabIndex && `border-bottom: 5px solid ${red.light}`};
     transition: border-bottom 200ms linear;
     padding-top: 5px;
   }
 `;
 
 export const NavBar = () => {
-  const [activeTabIndex, setActiveTabIndex] = useState(routerLinks[0].tabIndex);
+  const [activeTabIndex, setActiveTabIndex]: [number, (number) => number] =
+    useState(routerLinks[0].tabIndex);
+
+  useEffect(() => {
+    const currentPathIndex = routerLinks.find(
+      (item) => item.link === window.location.pathname
+    )?.tabIndex;
+    setActiveTabIndex(currentPathIndex || routerLinks[0].tabIndex);
+  }, []);
 
   return (
     <StyledNavBar>
       <Logo />
       {routerLinks.map((item: RouterLink) => (
         <StyledLink
+          key={item.link}
           onClick={() => setActiveTabIndex(item.tabIndex)}
           tabIndex={item.tabIndex}
-          activeTabIndex={activeTabIndex}
+          activetabindex={activeTabIndex}
           to={item.link}
         >
           {item.title}
