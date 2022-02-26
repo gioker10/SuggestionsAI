@@ -10,6 +10,7 @@ const StyledNavBar = styled.nav`
   width: 100%;
   height: 60px;
   border-bottom: 1px solid ${gray.normal};
+  box-shadow: 0 0 8px rgb(0 0 0 / 0.25);
 `;
 
 const StyledLink = styled(Link)`
