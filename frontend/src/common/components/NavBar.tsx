@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import {Link, useLocation} from 'react-router-dom';
 import styled from 'styled-components';
-import { routerLinks, RouterLink } from '../../routerUtils/RouterConstants';
-import { red, gray } from '../../theme/ColorConstants';
-import { Logo } from '../../theme/Logo';
+import {routerLinks, RouterLink} from '../../routerUtils/RouterConstants';
+import {red, gray} from '../../theme/ColorConstants';
+import {Logo} from '../../theme/Logo';
 
 const StyledNavBar = styled.nav`
   display: flex;
@@ -21,13 +21,13 @@ const StyledLink = styled(Link)`
   transition: border-bottom 200ms linear;
   text-decoration: none;
   color: black;
-  ${({ activetabindex, tabIndex }) =>
+  ${({activetabindex, tabIndex}) =>
     activetabindex === tabIndex &&
     `padding-top: 5px;border-bottom: 5px solid ${red.dark}`};
 
   &:hover {
     cursor: pointer;
-    ${({ activetabindex, tabIndex }) =>
+    ${({activetabindex, tabIndex}) =>
       activetabindex !== tabIndex && `border-bottom: 5px solid ${red.light}`};
     transition: border-bottom 200ms linear;
     transition: padding-top 0ms linear;

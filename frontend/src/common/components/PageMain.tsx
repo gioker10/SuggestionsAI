@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SearchBar } from './SearchBar';
+import {SearchBar} from './SearchBar';
 
 const PageContainer = styled.div`
   width: 100%;
@@ -34,7 +34,7 @@ interface Props {
   title: string;
 }
 
-export const PageMain = ({ title }): Props => {
+export const PageMain = ({title}): Props => {
   return (
     <PageContainer>
       <TitleArea>

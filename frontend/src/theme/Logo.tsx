@@ -1,8 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
-import { routerLinks } from '../routerUtils/RouterConstants';
-import { red } from './ColorConstants';
+import {routerLinks} from '../routerUtils/RouterConstants';
+import {red} from './ColorConstants';
 
 const StyledLogo = styled.svg`
   cursor: pointer;

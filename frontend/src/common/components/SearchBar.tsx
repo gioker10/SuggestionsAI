@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
-import { gray, red } from '../../theme/ColorConstants';
+import {gray, red} from '../../theme/ColorConstants';
 
 const StyledInputWrapper = styled.div`
   width: 40%;
@@ -12,10 +12,10 @@ const StyledInputWrapper = styled.div`
   justify-content: center;
   align-items: center;
   transition: border 200ms linear;
-  ${({ isFocused }) => isFocused && `border: 1px solid ${red.dark};`}
+  ${({isFocused}) => isFocused && `border: 1px solid ${red.dark};`}
 
   &:hover {
-    ${({ isFocused }) => !isFocused && `border: 1px solid ${red.light};`}
+    ${({isFocused}) => !isFocused && `border: 1px solid ${red.light};`}
     transition: border 200ms linear;
   }
 `;
@@ -32,7 +32,7 @@ interface Props {
   searchType: string;
 }
 
-export const SearchBar = ({ searchType }): Props => {
+export const SearchBar = ({searchType}): Props => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
