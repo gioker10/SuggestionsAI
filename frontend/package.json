@@ -5,7 +5,7 @@
     "build": "webpack --mode production",
     "prettier": "prettier --write .",
     "prettier:check": "prettier --check .",
-    "lint": "eslint ."
+    "lint": "eslint src/*"
   },
   "dependencies": {
     "react": "17.0.2",
