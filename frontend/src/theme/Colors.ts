@@ -9,3 +9,5 @@ export const gray = {
   normal: '#bdbdbd',
   light: '#e0e0e0',
 };
+
+export const black = '#000000';

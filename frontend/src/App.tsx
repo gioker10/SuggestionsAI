@@ -1,11 +1,11 @@
-import React, { Fragment } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-import styled from "styled-components";
-import { NavBar } from "./common/components/NavBar";
-import { Pages } from "./common/constants/Constants";
-import { GamesPage } from "./Games/containers/GamesPage";
-import { MoviesPage } from "./Movies/containers/MoviesPage";
-import { MusicPage } from "./Music/containers/MusicPage";
+import React, { Fragment } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import styled from 'styled-components';
+import { NavBar } from './common/components/NavBar';
+import { Pages } from './common/constants/Constants';
+import { GamesPage } from './Games/containers/GamesPage';
+import { MoviesPage } from './Movies/containers/MoviesPage';
+import { MusicPage } from './Music/containers/MusicPage';
 
 const StyledApp = styled.div`
   width: 100%;

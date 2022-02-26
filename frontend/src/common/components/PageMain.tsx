@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { SearchBar } from "./SearchBar";
+import React from 'react';
+import styled from 'styled-components';
+import { SearchBar } from './SearchBar';
 
 const PageContainer = styled.div`
   width: 100%;

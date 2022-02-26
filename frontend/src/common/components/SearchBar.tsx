@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { gray, red } from "../../theme/ColorConstants";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { gray, red } from '../../theme/ColorConstants';
 
 const StyledInputWrapper = styled.div`
   width: 40%;
@@ -39,7 +39,7 @@ export const SearchBar = ({ searchType }): Props => {
     <StyledInputWrapper isFocused={isFocused}>
       <StyledInput
         placeholder={`Search for ${searchType}...`}
-        onClick={() => setIsFocused(true)}
+        onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
       />
     </StyledInputWrapper>

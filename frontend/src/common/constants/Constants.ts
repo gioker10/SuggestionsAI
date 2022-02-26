@@ -1,5 +1,5 @@
 export const Pages = {
-  games: "Games",
-  movies: "Movies",
-  music: "Music",
+  games: 'Games',
+  movies: 'Movies',
+  music: 'Music',
 };

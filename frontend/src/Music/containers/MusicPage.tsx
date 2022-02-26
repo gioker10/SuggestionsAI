@@ -1,5 +1,5 @@
-import React from "react";
-import { PageMain } from "../../common/components/PageMain";
+import React from 'react';
+import { PageMain } from '../../common/components/PageMain';
 
 interface Props {
   title: string;

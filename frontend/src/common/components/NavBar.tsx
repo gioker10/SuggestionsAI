@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import styled from "styled-components";
-import { routerLinks, RouterLink } from "../../routerUtils/RouterConstants";
-import { red, gray } from "../../theme/ColorConstants";
-import { Logo } from "../../theme/Logo";
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import styled from 'styled-components';
+import { routerLinks, RouterLink } from '../../routerUtils/RouterConstants';
+import { red, gray } from '../../theme/ColorConstants';
+import { Logo } from '../../theme/Logo';
 
 const StyledNavBar = styled.nav`
   display: flex;
